@@ -13,9 +13,9 @@
             <ComboBox Name="cbOperations" SelectionChanged="cbOperations_SelectionChanged"></ComboBox>
       
             <StackPanel Orientation="Horizontal">
-                <TextBox Name="tbFirstNum" Width="45" HorizontalAlignment="Left" Margin="35,10,0,10"></TextBox>
-                <TextBlock Name="tbSymb" HorizontalAlignment="Center" Margin="20,10,20,10"> +</TextBlock>
-                <TextBox Name="tbSecondNum" Width="45" HorizontalAlignment="Right" Margin="5,10,0,10"></TextBox>
+                <TextBox Name="tbFirstNum" Width="45" HorizontalAlignment="Left" Margin="35,10,0,10" PreviewTextInput="OnPreviewTextInput"></TextBox>
+                <TextBlock Name="tbSymb" HorizontalAlignment="Center" Margin="20,10,20,10"></TextBlock>
+                <TextBox Name="tbSecondNum" Width="45" HorizontalAlignment="Right" Margin="5,10,0,10" PreviewTextInput="OnPreviewTextInput"></TextBox>
             </StackPanel>
 
             <Button Name="btnResult" Click="btnResult_Click"> Вычислить </Button>

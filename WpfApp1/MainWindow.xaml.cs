@@ -23,19 +23,29 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            Model.tb = tbSymb;
-            //Model.tbCbx = ;
+            //Model.tb = tbSymb;
+            Model.tbSymb = tbSymb; //символ
+
+            Model.first = tbFirstNum; //первое
+            Model.second = tbSecondNum; //второе
+            Model.result = tbResult; //результат
+
             cbOperations.ItemsSource = Model.datalist;
         }
 
         private void btnResult_Click(object sender, RoutedEventArgs e)
         {
-
+            Model.calculations(cbOperations.SelectedIndex); //вычисление, передаем номер операции
         }
 
-        private void cbOperations_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cbOperations_SelectionChanged(object sender, SelectionChangedEventArgs e) //меняем знак при выборе
         {
+            Model.Combx = cbOperations.SelectedIndex;
+        }
 
+        private void OnPreviewTextInput(object sender, TextCompositionEventArgs e) //ограничиваем допустимые значения цифрами и запятой
+        {
+            e.Handled = "0123456789,".IndexOf(e.Text) < 0;
         }
     }
 }
