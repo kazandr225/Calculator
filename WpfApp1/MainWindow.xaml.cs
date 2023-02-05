@@ -23,7 +23,6 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            //Model.tb = tbSymb;
             Model.tbSymb = tbSymb; //символ
 
             Model.first = tbFirstNum; //первое
